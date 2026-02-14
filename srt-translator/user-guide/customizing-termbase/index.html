@@ -1,0 +1,1937 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Free MIT-licensed SRT translation tool for creators and developers">
+      
+      
+      
+        <link rel="canonical" href="https://docs.workingbackwards.com/srt-translator/user-guide/customizing-termbase/">
+      
+      
+        <link rel="prev" href="../creator-guide/">
+      
+      
+        <link rel="next" href="../terminology/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Custom Termbases - SRT Translator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#design-doc-customizing-your-termbase" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://docs.workingbackwards.com/" title="SRT Translator" class="md-header__button md-logo" aria-label="SRT Translator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SRT Translator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Custom Termbases
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/working-backwards/srt_translator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../developer/" class="md-tabs__link">
+          
+  
+  
+  Developer Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docs.workingbackwards.com/" title="SRT Translator" class="md-nav__button md-logo" aria-label="SRT Translator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SRT Translator
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/working-backwards/srt_translator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GUI Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creator-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Creators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Termbases
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Termbases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-step-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Step Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-you-should-use-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When You Should Use This
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-provide-to-the-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Provide to the AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-ai-uses-this-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the AI Uses This Content
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary / goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-srt_translator-does-and-does-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the srt_translator does and does not do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-user-experience-customer-facing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-level user experience (customer-facing flow)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-details-and-step-by-step-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical details and step-by-step guidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical details and step-by-step guidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-gather-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Gather evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-export-the-seed-termbase-from-the-srt_translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Export the seed termbase from the srt_translator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-an-external-customization-step-patch-first-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Run an external customization step (patch-first workflow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-output-format-from-the-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required output format from the AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-ai-should-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the AI should not do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-review-the-patch-using-a-text-editor-no-coding-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Review the patch using a text editor (no coding required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-the-final-termbasejson-and-upload-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Create the final termbase.json and upload it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-work-with-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to work with variants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-with-amazon-leadership-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example with Amazon Leadership Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-and-conservative-merge-rules-for-non-technical-creators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default and conservative merge rules (for non-technical creators)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance-and-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality assurance and acceptance criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-security-and-practical-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privacy, security, and practical notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-reference-ai-prompts-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Reference AI Prompts (Optional)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix: Reference AI Prompts (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-1-produce-termbasepatchjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 1 — Produce termbase.patch.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/translation-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translation Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/technical-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/post-translation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-Translation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/coding-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/ci-guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI Guardrails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/github-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-step-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Step Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-you-should-use-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When You Should Use This
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-provide-to-the-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Provide to the AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-ai-uses-this-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the AI Uses This Content
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary / goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-srt_translator-does-and-does-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the srt_translator does and does not do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-user-experience-customer-facing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-level user experience (customer-facing flow)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-details-and-step-by-step-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical details and step-by-step guidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical details and step-by-step guidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-gather-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Gather evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-export-the-seed-termbase-from-the-srt_translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Export the seed termbase from the srt_translator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-an-external-customization-step-patch-first-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Run an external customization step (patch-first workflow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-output-format-from-the-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required output format from the AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-ai-should-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the AI should not do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-review-the-patch-using-a-text-editor-no-coding-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Review the patch using a text editor (no coding required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-the-final-termbasejson-and-upload-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Create the final termbase.json and upload it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-work-with-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to work with variants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-with-amazon-leadership-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example with Amazon Leadership Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-and-conservative-merge-rules-for-non-technical-creators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default and conservative merge rules (for non-technical creators)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance-and-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality assurance and acceptance criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-security-and-practical-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privacy, security, and practical notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-reference-ai-prompts-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Reference AI Prompts (Optional)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix: Reference AI Prompts (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-1-produce-termbasepatchjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 1 — Produce termbase.patch.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="design-doc-customizing-your-termbase">Design doc — Customizing Your Termbase<a class="headerlink" href="#design-doc-customizing-your-termbase" title="Permanent link">&para;</a></h1>
+<p><strong>Audience:</strong> Content creators translating courses into multiple languages. This document explains a simple, low-risk process to produce higher-quality <code>termbase.json</code> files the <strong>srt_translator</strong> will consume, using supplemental bilingual content (for example, official corporate pages like Amazon Leadership Principles) and optional AI assistance. The text assumes you can download and open JSON files but does not require coding knowledge.</p>
+<hr />
+<h2 id="what-this-step-does">What This Step Does<a class="headerlink" href="#what-this-step-does" title="Permanent link">&para;</a></h2>
+<p>Customizing your termbase allows you to reuse terminology from existing translated content so future subtitles stay consistent.</p>
+<h2 id="when-you-should-use-this">When You Should Use This<a class="headerlink" href="#when-you-should-use-this" title="Permanent link">&para;</a></h2>
+<p>You already have translated website or product content.
+Your brand uses specific wording consistently.
+You want subtitles to match existing language choices.</p>
+<h2 id="what-to-provide-to-the-ai-agent">What to Provide to the AI Agent<a class="headerlink" href="#what-to-provide-to-the-ai-agent" title="Permanent link">&para;</a></h2>
+<p>Translated web pages.
+Marketing copy.
+Product descriptions.
+Help center articles.
+Previous subtitle files.</p>
+<h2 id="how-the-ai-uses-this-content">How the AI Uses This Content<a class="headerlink" href="#how-the-ai-uses-this-content" title="Permanent link">&para;</a></h2>
+<p>Using the AI prompts below, you can use your own AI agent to analyze your examples and extract preferred terms and phrases to add to the termbase before translation begins.</p>
+<h2 id="summary-goal">Summary / goal<a class="headerlink" href="#summary-goal" title="Permanent link">&para;</a></h2>
+<p>Many machine translations are correct in meaning but can fail to use company-preferred phrasing, role titles, or domain-specific terms. The goal of this design is to give content creators a straightforward, practical workflow to produce a stronger termbase that the srt_translator already understands and uses. The workflow relies on an external customization step — either an AI agent or a simple helper tool — that augments the srt_translator’s native termbase format. The srt_translator itself remains unchanged; it only accepts the final <code>termbase.json</code> in the exact shape it already uses. This keeps the translation runtime deterministic while enabling creators to safely benefit from external knowledge and automation.</p>
+<hr />
+<h2 id="what-the-srt_translator-does-and-does-not-do">What the srt_translator does and does not do<a class="headerlink" href="#what-the-srt_translator-does-and-does-not-do" title="Permanent link">&para;</a></h2>
+<p>The srt_translator applies a single JSON termbase during translation. The termbase has the following, simple structure:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;OKRs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;أهداف ونتائج رئيسية&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;leadership principles&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;مبادئ القيادة&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;zh-Hans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Leadership Principles&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;领导力准则&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Fulfillment center&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;仓库&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The app treats that JSON as authoritative. It does not attempt to fetch evidence from web pages on your behalf, it does not require a reviewer to sign off every entry, and it does not accept any alternative JSON schema. This simplicity keeps runtime behavior predictable while allowing flexible, external workflows for termbase creation and review.</p>
+<hr />
+<h2 id="high-level-user-experience-customer-facing-flow">High-level user experience (customer-facing flow)<a class="headerlink" href="#high-level-user-experience-customer-facing-flow" title="Permanent link">&para;</a></h2>
+<p>A content creator following this design will perform the following high-level steps:</p>
+<ol>
+<li>Use the srt_translator to generate and export an initial <code>termbase.json</code> for the target language(s). This gives a baseline of the app's suggested mappings.</li>
+<li>Collect supplemental bilingual content — for example, official company pages, translated slides, previous subtitles, or glossary documents. The Amazon Leadership Principles zh-Hans page is a strong example of an authoritative source.</li>
+<li>Run an external customization step with an AI agent. The customization step reviews the original <code>termbase.json</code> and the supplemental content, and produces a <code>termbase.patch.json</code> — a JSON file in the exact srt_translator schema that includes additions and suggested changes.</li>
+<li>Review the patch in a text editor. If you see a change you don't like, manually remove it from <code>termbase.patch.json</code>.</li>
+<li>Once you are satisfied with the results, ask your AI agent to produce a final <code>termbase.json</code> by applying the reviewed patch to the original termbase. Avoid asking the agent to merge feedback and the termbase in a single step, as this makes review harder and increases the risk of unintended changes. Upload or commit this file in the same way the app expects.</li>
+</ol>
+<p>This flow keeps the srt_translator unchanged, minimizes technical demands on the content creator, and gives a safe path to inject company-accurate phrasing into automated translations.</p>
+<hr />
+<h2 id="practical-details-and-step-by-step-guidance">Practical details and step-by-step guidance<a class="headerlink" href="#practical-details-and-step-by-step-guidance" title="Permanent link">&para;</a></h2>
+<h3 id="1-gather-evidence">1. Gather evidence<a class="headerlink" href="#1-gather-evidence" title="Permanent link">&para;</a></h3>
+<p>Create a short list of URLs and files that contain authoritative original content and its official translations. For example, if a course references Amazon-specific concepts, gather the original-language Leadership Principles page and the official translated versions (for example, zh-Hans), along with relevant internal glossaries, translated slide decks, and any previously translated subtitles. Put these links and files in a single folder or a simple text manifest so they are easy to hand to an AI agent or a helper tool.</p>
+<h3 id="2-export-the-seed-termbase-from-the-srt_translator">2. Export the seed termbase from the srt_translator<a class="headerlink" href="#2-export-the-seed-termbase-from-the-srt_translator" title="Permanent link">&para;</a></h3>
+<p>Use the app's <strong>Export</strong> button in the termbase editor to get the current <code>termbase.json</code>. This file is your working seed. If the app produces termbase snapshots per batch, export the snapshot that corresponds to the course you are translating.</p>
+<h3 id="3-run-an-external-customization-step-patch-first-workflow">3. Run an external customization step (patch-first workflow)<a class="headerlink" href="#3-run-an-external-customization-step-patch-first-workflow" title="Permanent link">&para;</a></h3>
+<p>In this workflow, the AI agent does not rewrite the existing termbase directly. Instead, it produces a patch that explicitly describes <em>what should change</em> and <em>why</em>.</p>
+<p>You provide the AI agent with two inputs:</p>
+<ol>
+<li>The current <code>termbase.json</code> generated by the srt_translator.</li>
+<li>Supplemental feedback or bilingual material, such as reviewer comments, official company translations, or previously translated content.</li>
+</ol>
+<p>If both an original-language source and one or more translated versions of the same content are provided, the AI agent must treat the original-language source as canonical. Translated versions should be used only to confirm official target-language phrasing. The agent should not infer new source terms from translated text alone when an original source is available.</p>
+<p>If an original-language source is not provided or cannot be clearly identified, the agent may use translated material as evidence, but any proposed mappings based on translated-only sources must be marked as requiring review.</p>
+<p>The AI agent's task is to compare the feedback against the existing termbase and produce a <strong>patch artifact</strong> that makes intent explicit. Each proposed change must fall into one of the following categories:</p>
+<ul>
+<li><strong>Add</strong> — introduce a new source → target mapping that does not already exist.</li>
+<li><strong>Modify</strong> — replace the target value for an existing source string.</li>
+</ul>
+<p>Removing entries from a termbase is intentionally out of scope for this workflow and can be done manually later if needed.</p>
+<p>Whether a change is an addition or a modification is determined by comparison with your existing <code>termbase.json</code>: new source keys are additions, while existing source keys with new target values are modifications.</p>
+<p>The output of this step is a <code>termbase.patch.json</code> file in the same schema the srt_translator already understands. The patch exists purely for review and does not affect translation until it is explicitly merged into a final <code>termbase.json</code>.</p>
+<h3 id="required-output-format-from-the-ai">Required output format from the AI<a class="headerlink" href="#required-output-format-from-the-ai" title="Permanent link">&para;</a></h3>
+<p>When you run the AI customization step, the agent must format its output so it is safe for copy and paste by a non-technical user.</p>
+<p>Each output file must be clearly separated and labeled, and each file must appear as its own standalone JSON block. You should be able to copy and paste each block directly into its own file without editing or cleanup.</p>
+<p>If the output is mixed together, unlabeled, wrapped in explanations, or otherwise difficult to separate, stop and ask the AI to reformat the output before proceeding.</p>
+<h3 id="what-the-ai-should-not-do">What the AI should not do<a class="headerlink" href="#what-the-ai-should-not-do" title="Permanent link">&para;</a></h3>
+<p>The AI customization step is intentionally conservative. It should not:</p>
+<ul>
+<li>regenerate or rewrite the full termbase</li>
+<li>remove existing entries from the termbase</li>
+<li>infer terminology from subtitle or sentence context</li>
+<li>include markdown, URLs, or formatting in source keys</li>
+<li>correct general translation quality beyond what is explicitly provided in feedback</li>
+</ul>
+<h3 id="4-review-the-patch-using-a-text-editor-no-coding-required">4. Review the patch using a text editor (no coding required)<a class="headerlink" href="#4-review-the-patch-using-a-text-editor-no-coding-required" title="Permanent link">&para;</a></h3>
+<p>In this workflow, review happens using your AI agent and a standard text editor. You compare the current termbase entries and the proposed changes by reading the JSON files directly.</p>
+<p>The review step should make clear whether a suggested mapping is company-specific, because company-specific suggestions should generally be favored for courses about that company or its products.</p>
+<h3 id="5-create-the-final-termbasejson-and-upload-it">5. Create the final <code>termbase.json</code> and upload it<a class="headerlink" href="#5-create-the-final-termbasejson-and-upload-it" title="Permanent link">&para;</a></h3>
+<p>After accepting suggestions, task your AI agent to produce the final <code>termbase.json</code>. Upload this final file to the srt_translator exactly as you would a termbase today. The srt_translator will then apply the mappings during translation.</p>
+<hr />
+<h2 id="how-to-work-with-variants">How to work with variants<a class="headerlink" href="#how-to-work-with-variants" title="Permanent link">&para;</a></h2>
+<p>Variants are alternative surface forms of the same source phrase that appear in natural text. Because the srt_translator expects <code>source → target</code> mappings in a language dictionary, the simplest and most robust convention is to add each variant as its own <code>source</code> key that maps to the same <code>target</code> string. For example, the following two entries both map to the same target phrase and ensure coverage of different surface forms:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;zh-Hans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Single-threaded Leader&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;单一负责人&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;single threaded leader&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;单一负责人&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>When customizing a termbase, auto-generate obvious variants such as hyphenation/non-hyphenation, differences in capitalization, and singular/plural forms. The AI prompt already has the variant instructions, but you will want to double-check the results.</p>
+<hr />
+<h2 id="example-with-amazon-leadership-principles">Example with Amazon Leadership Principles<a class="headerlink" href="#example-with-amazon-leadership-principles" title="Permanent link">&para;</a></h2>
+<p>If you have the Amazon Leadership Principles page in English and the zh-Hans page, an AI agent should search the two pages and, for the canonical term “Leadership Principles,” add the mapping:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;zh-Hans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Leadership Principles&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;领导力准则&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>When you review the patch, you can verify this mapping by checking the original and translated pages side-by-side.</p>
+<hr />
+<h2 id="default-and-conservative-merge-rules-for-non-technical-creators">Default and conservative merge rules (for non-technical creators)<a class="headerlink" href="#default-and-conservative-merge-rules-for-non-technical-creators" title="Permanent link">&para;</a></h2>
+<p>To reduce risk, instruct your AI agent to follow conservative defaults when proposing changes to the termbase. These defaults are designed to minimize accidental regressions and to ensure that human reviewers remain in control.</p>
+<p>During review, content creators should verify proposed changes against their source material. Mappings backed by official public URLs can generally be accepted with confidence. Mappings based on reviewer feedback or inferred from context should be confirmed with a trusted reviewer, especially if the content creator does not speak the target language. When a proposed mapping conflicts with an existing entry for the same source string, always require manual resolution.</p>
+<p>These defaults are intentionally conservative. They prevent the agent from silently overwriting a trusted mapping.</p>
+<hr />
+<h2 id="quality-assurance-and-acceptance-criteria">Quality assurance and acceptance criteria<a class="headerlink" href="#quality-assurance-and-acceptance-criteria" title="Permanent link">&para;</a></h2>
+<p>To ensure this process produces reliable results, check the following before you consider the termbase ready for production use:</p>
+<ol>
+<li>The final <code>termbase.json</code> is valid JSON and follows the exact schema <code>{"&lt;lang&gt;": {"&lt;source&gt;": "&lt;target&gt;"}}</code>. The srt_translator will reject non-conforming structure.</li>
+<li>The majority of added/changed mappings backed by official sources are accepted without manual editing and pass sample-in-context checks.</li>
+<li>All conflicts between existing mappings and proposed changes are resolved explicitly — none are changed silently.</li>
+<li>A small sample translation that exercises the new terms shows natural usage and correct collocation in context.</li>
+</ol>
+<hr />
+<h2 id="privacy-security-and-practical-notes">Privacy, security, and practical notes<a class="headerlink" href="#privacy-security-and-practical-notes" title="Permanent link">&para;</a></h2>
+<p>Do not share or upload private corporate documents to an external service without permission. If you use an external AI agent that fetches evidence URLs, ensure the agent respects access controls and privacy policies. Prefer running agents within your organization or with a controlled third party when you deal with proprietary materials.</p>
+<hr />
+<h2 id="closing">Closing<a class="headerlink" href="#closing" title="Permanent link">&para;</a></h2>
+<p>This design keeps the srt_translator intentionally simple while giving content creators a safe, auditable path to improve termbase quality using supplemental bilingual content. The key ideas are: keep the runtime termbase schema unchanged, perform evidence-backed customization outside the app, represent variants as separate source keys, and require an explicit review before committing the final <code>termbase.json</code>. Following this pattern will reduce post-translation editing and increase the accuracy and consistency of your course translations.</p>
+<hr />
+<h2 id="appendix-reference-ai-prompts-optional">Appendix: Reference AI Prompts (Optional)<a class="headerlink" href="#appendix-reference-ai-prompts-optional" title="Permanent link">&para;</a></h2>
+<p>The following prompts can be used with your preferred AI agent to execute the patch-first workflow described in this document.</p>
+<p>If the AI output is not clearly formatted, ask it to reply again using the required format.</p>
+<h3 id="prompt-1-produce-termbasepatchjson">Prompt 1 — Produce <code>termbase.patch.json</code><a class="headerlink" href="#prompt-1-produce-termbasepatchjson" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>You are an assistant that proposes conservative improvements to a termbase used by the srt_translator.
+
+IMPORTANT — Original vs. Translated Sources
+- If both an original-language source and one or more official translated versions of the same content are provided, treat the original-language source as canonical for identifying source terms.
+- Use translated versions only to confirm official target-language phrasing.
+- Do NOT infer or invent source-language terms based solely on translated text when an original source is available.
+- If no original-language source is available, the agent may use translated material as evidence, but any mappings derived this way MUST be flagged for review.
+
+INPUTS I WILL PROVIDE
+(A) termbase.json in this exact schema:
+    {&quot;&lt;lang&gt;&quot;: {&quot;&lt;source&gt;&quot;: &quot;&lt;target&gt;&quot;}}
+(B) supplemental bilingual material and/or reviewer feedback (URLs, excerpts, emails, prior translations).
+
+YOUR TASK
+Produce EXACTLY ONE JSON output: `termbase.patch.json`.
+
+OUTPUT FORMAT (MANDATORY — COPY/PASTE SAFE)
+Output MUST be exactly the following, in this order, and nothing else:
+
+**Note for content creators:** The `REVIEW THESE TERMS` block is for human review only. **Do not** include the review text or the `--- FILE: … ---` marker in the JSON file. Copy **only** the JSON contained inside the fenced code block into `termbase.patch.json`.
+
+1) A plain-text section titled exactly:
+REVIEW THESE TERMS:
+List only the specific `source → target` mappings that you believe warrant human confirmation, one mapping per line, using the exact arrow `→`. If none, write:
+(none)
+
+2) A line that is exactly:
+--- FILE: termbase.patch.json ---
+
+3) A fenced JSON code block containing ONLY pretty-printed JSON (not minified), using the top-level language map schema:
+```json
+{
+  &quot;&lt;lang&gt;&quot;: {
+    &quot;&lt;source&gt;&quot;: &quot;&lt;target&gt;&quot;,
+    ...
+  },
+  ...
+}
+</code></pre></div>
+
+<p>ABSOLUTE RULES (do not deviate)
+- Do NOT output any other text before, after, or between the sections above. If you cannot comply with the format, output ONLY:
+  FORMAT_ERROR
+- The JSON must be valid, pretty-printed, and use Unicode characters unescaped (readable non-ASCII).
+- The patch must use the top-level schema <code>{"&lt;lang&gt;": {...}}</code> (this matches the app loader).
+- Include ONLY proposed additions or modifications. Do NOT include deletions or delete markers.
+- Do NOT create duplicates that differ only by capitalization unless the reviewer explicitly requested casing variants.
+- Source keys must be plain phrases: strip surrounding markdown, bracket wrappers, or URLs. If reviewer text contains formatted links like <code>[text](url)</code>, extract only <code>text</code> as the source key.
+- Generate variants only for plural/singular or hyphenation/non-hyphenation when likely to appear in subtitles.
+- If uncertain about any mapping, omit it rather than guessing.
+- The patch must contain only string → string mappings; omit any candidate mapping where either the source or the target is not a string.</p>
+<p>REVIEW FLAGGING RULES
+Flag a mapping for review (include it under the REVIEW header) ONLY if at least one of the following is true:
+- The mapping is inferred rather than explicitly supported by reviewer evidence or aligned original+translated sources.
+- The term is idiomatic, highly context-dependent, or culturally sensitive.
+- The change overwrites an existing mapping in a non-obvious way (significant meaning change).
+- The mapping was derived from translated-only evidence (no canonical original-language source available).</p>
+<p>OTHER CONSTRAINTS
+- Do not attempt to merge the patch into the termbase in this step — the patch is for review only.
+- Do not call external services or perform web requests.
+- Do not include explanations, reasoning, or help text in the output.</p>
+<p>When I provide inputs, follow the rules exactly and output only the REVIEW block, the <code>--- FILE</code> line, and the fenced JSON block containing <code>termbase.patch.json</code>.</p>
+<p>--- END OF PROMPT ---</p>
+<div class="codehilite"><pre><span></span><code><span class="o">---</span>
+
+<span class="c1">### Prompt 2 — Apply an approved patch to produce final `termbase.json`</span>
+
+<span class="err">```</span><span class="n">text</span>
+<span class="n">You</span> <span class="n">are</span> <span class="n">an</span> <span class="n">assistant</span> <span class="n">that</span> <span class="n">applies</span> <span class="n">an</span> <span class="n">approved</span> <span class="n">termbase</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">json</span> <span class="n">to</span> <span class="n">produce</span> <span class="n">a</span> <span class="n">final</span> <span class="n">termbase</span><span class="o">.</span><span class="n">json</span> <span class="n">that</span> <span class="n">the</span> <span class="n">srt_translator</span> <span class="n">GUI</span> <span class="n">can</span> <span class="kn">import</span><span class="w"> </span><span class="nn">directly.</span>
+
+<span class="n">INPUTS</span> <span class="p">(</span><span class="n">plain</span> <span class="n">text</span><span class="p">):</span>
+<span class="o">-</span> <span class="n">ORIGINAL_JSON</span><span class="p">:</span> <span class="n">the</span> <span class="n">current</span> <span class="n">termbase</span> <span class="n">exported</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">SRT</span> <span class="n">app</span> <span class="p">(</span><span class="n">may</span> <span class="n">be</span> <span class="n">either</span><span class="p">):</span>
+    <span class="n">A</span><span class="p">)</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">languages</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;lang&gt;&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;source&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;target&gt;&quot;</span><span class="p">}}</span>
+    <span class="n">B</span><span class="p">)</span> <span class="n">wrapper</span> <span class="n">schema</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;termbase&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;lang&gt;&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;source&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;target&gt;&quot;</span><span class="p">}}}</span>  <span class="p">(</span><span class="n">accepted</span> <span class="k">for</span> <span class="n">robustness</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">PATCH_JSON</span><span class="p">:</span> <span class="n">the</span> <span class="n">reviewed</span> <span class="ow">and</span> <span class="n">approved</span> <span class="n">termbase</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">json</span> <span class="p">(</span><span class="n">may</span> <span class="n">be</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="ow">or</span> <span class="n">wrapper</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">GOAL</span>
+<span class="n">Produce</span> <span class="n">a</span> <span class="n">single</span> <span class="n">final</span> <span class="n">JSON</span> <span class="n">document</span> <span class="err">`</span><span class="n">termbase</span><span class="o">.</span><span class="n">json</span><span class="err">`</span> <span class="n">using</span> <span class="n">the</span> <span class="n">exact</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">schema</span> <span class="n">the</span> <span class="n">existing</span> <span class="n">loader</span> <span class="n">expects</span><span class="p">:</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;&lt;lang&gt;&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;&lt;source&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;target&gt;&quot;</span><span class="p">,</span>
+    <span class="o">...</span>
+  <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="n">IMPORTANT</span> <span class="n">OUTPUT</span> <span class="n">RULES</span>
+<span class="o">-</span> <span class="n">Output</span> <span class="n">ONLY</span> <span class="n">the</span> <span class="n">final</span> <span class="n">JSON</span> <span class="n">document</span> <span class="p">(</span><span class="n">no</span> <span class="n">headers</span><span class="p">,</span> <span class="n">no</span> <span class="n">review</span> <span class="n">text</span><span class="p">,</span> <span class="n">no</span> <span class="n">explanation</span><span class="p">)</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">The</span> <span class="n">JSON</span> <span class="n">must</span> <span class="n">be</span> <span class="n">valid</span><span class="p">,</span> <span class="n">pretty</span><span class="o">-</span><span class="n">printed</span><span class="p">,</span> <span class="ow">and</span> <span class="n">use</span> <span class="n">Unicode</span> <span class="n">characters</span> <span class="n">unescaped</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">The</span> <span class="n">final</span> <span class="n">JSON</span> <span class="n">must</span> <span class="n">use</span> <span class="n">the</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">language</span> <span class="nb">map</span> <span class="n">schema</span> <span class="p">(</span><span class="n">no</span> <span class="s2">&quot;termbase&quot;</span> <span class="n">wrapper</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">NORMALIZATION</span> <span class="p">(</span><span class="n">first</span><span class="p">)</span>
+<span class="mf">1.</span> <span class="n">If</span> <span class="n">ORIGINAL_JSON</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="s2">&quot;termbase&quot;</span> <span class="n">key</span><span class="p">,</span> <span class="nb">set</span> <span class="n">ORIGINAL</span> <span class="o">:=</span> <span class="n">ORIGINAL_JSON</span><span class="p">[</span><span class="s2">&quot;termbase&quot;</span><span class="p">];</span> <span class="n">otherwise</span> <span class="n">ORIGINAL</span> <span class="o">:=</span> <span class="n">ORIGINAL_JSON</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">If</span> <span class="n">PATCH_JSON</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="s2">&quot;termbase&quot;</span> <span class="n">key</span><span class="p">,</span> <span class="nb">set</span> <span class="n">PATCH</span> <span class="o">:=</span> <span class="n">PATCH_JSON</span><span class="p">[</span><span class="s2">&quot;termbase&quot;</span><span class="p">];</span> <span class="n">otherwise</span> <span class="n">PATCH</span> <span class="o">:=</span> <span class="n">PATCH_JSON</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">After</span> <span class="n">normalization</span><span class="p">,</span> <span class="n">ORIGINAL</span> <span class="ow">and</span> <span class="n">PATCH</span> <span class="n">must</span> <span class="n">be</span> <span class="n">dictionaries</span> <span class="n">mapping</span> <span class="n">language</span> <span class="n">tags</span> <span class="err">→</span> <span class="p">{</span><span class="n">source</span><span class="p">:</span> <span class="n">target</span><span class="p">}</span> <span class="n">dictionaries</span><span class="o">.</span>
+
+<span class="n">MERGE</span> <span class="n">RULES</span> <span class="p">(</span><span class="n">apply</span> <span class="n">PATCH</span> <span class="err">→</span> <span class="n">ORIGINAL</span><span class="p">)</span>
+<span class="mf">1.</span> <span class="n">For</span> <span class="n">each</span> <span class="n">language</span> <span class="n">L</span> <span class="ow">in</span> <span class="n">PATCH</span><span class="p">:</span>
+   <span class="n">a</span><span class="o">.</span> <span class="n">If</span> <span class="n">L</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ORIGINAL</span><span class="p">,</span> <span class="n">add</span> <span class="n">ORIGINAL</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span><span class="o">.</span>
+   <span class="n">b</span><span class="o">.</span> <span class="n">For</span> <span class="n">each</span> <span class="n">source</span> <span class="n">key</span> <span class="n">S_raw</span> <span class="ow">in</span> <span class="n">PATCH</span><span class="p">[</span><span class="n">L</span><span class="p">]:</span>
+      <span class="n">i</span><span class="o">.</span> <span class="n">Extract</span> <span class="n">a</span> <span class="n">clean</span> <span class="n">source</span> <span class="n">key</span> <span class="n">S</span> <span class="n">by</span> <span class="n">stripping</span> <span class="n">leading</span><span class="o">/</span><span class="n">trailing</span> <span class="n">whitespace</span> <span class="ow">and</span> <span class="n">removing</span> <span class="n">surrounding</span> <span class="n">markdown</span> <span class="ow">or</span> <span class="n">bracket</span><span class="o">/</span><span class="n">URL</span> <span class="n">wrappers</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="p">[</span><span class="n">text</span><span class="p">](</span><span class="n">url</span><span class="p">)</span> <span class="err">→</span> <span class="n">text</span><span class="p">)</span><span class="o">.</span> <span class="n">Preserve</span> <span class="n">internal</span> <span class="n">punctuation</span> <span class="ow">and</span> <span class="n">original</span> <span class="n">casing</span> <span class="k">for</span> <span class="n">S</span><span class="o">.</span>
+      <span class="n">ii</span><span class="o">.</span> <span class="n">If</span> <span class="n">ORIGINAL</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="n">already</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">key</span> <span class="n">that</span> <span class="n">differs</span> <span class="kn">from</span><span class="w"> </span><span class="nn">S</span> <span class="n">only</span> <span class="n">by</span> <span class="n">capitalization</span> <span class="p">(</span><span class="n">case</span><span class="o">-</span><span class="n">insensitive</span> <span class="n">match</span><span class="p">),</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">key</span><span class="o">.</span> <span class="n">Overwrite</span> <span class="n">the</span> <span class="n">existing</span> <span class="n">ORIGINAL</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="n">entry</span><span class="s1">&#39;s value with PATCH[L][S_raw] and preserve the existing key&#39;</span><span class="n">s</span> <span class="n">exact</span> <span class="n">casing</span><span class="o">.</span>
+      <span class="n">iii</span><span class="o">.</span> <span class="n">Otherwise</span> <span class="nb">set</span> <span class="n">ORIGINAL</span><span class="p">[</span><span class="n">L</span><span class="p">][</span><span class="n">S</span><span class="p">]</span> <span class="o">=</span> <span class="n">PATCH</span><span class="p">[</span><span class="n">L</span><span class="p">][</span><span class="n">S_raw</span><span class="p">]</span> <span class="p">(</span><span class="n">this</span> <span class="n">adds</span> <span class="ow">or</span> <span class="n">overwrites</span><span class="p">)</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Do</span> <span class="n">NOT</span> <span class="n">remove</span> <span class="n">keys</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ORIGINAL.</span>
+<span class="mf">3.</span> <span class="n">Overwrites</span> <span class="n">are</span> <span class="n">allowed</span> <span class="ow">and</span> <span class="n">applied</span> <span class="n">only</span> <span class="n">when</span> <span class="n">PATCH</span> <span class="n">explicitly</span> <span class="n">provides</span> <span class="n">a</span> <span class="n">mapping</span><span class="o">.</span>
+<span class="mf">4.</span> <span class="n">Do</span> <span class="n">NOT</span> <span class="n">invent</span> <span class="ow">or</span> <span class="n">guess</span> <span class="n">mappings</span> <span class="ow">not</span> <span class="n">present</span> <span class="ow">in</span> <span class="n">PATCH</span><span class="o">.</span>
+<span class="mf">5.</span> <span class="n">Treat</span> <span class="n">distinct</span> <span class="n">language</span> <span class="n">tags</span> <span class="k">as</span> <span class="n">distinct</span> <span class="p">(</span><span class="n">do</span> <span class="ow">not</span> <span class="n">auto</span><span class="o">-</span><span class="n">merge</span> <span class="s2">&quot;zh&quot;</span> <span class="ow">and</span> <span class="s2">&quot;zh-Hans&quot;</span><span class="p">)</span><span class="o">.</span> <span class="n">If</span> <span class="n">both</span> <span class="n">exist</span> <span class="ow">and</span> <span class="n">appear</span> <span class="n">related</span><span class="p">,</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">reconcile</span> <span class="n">automatically</span><span class="o">.</span>
+
+<span class="n">VALIDATION</span> <span class="o">/</span> <span class="n">SAFEGUARDS</span>
+<span class="o">-</span> <span class="n">If</span> <span class="n">PATCH</span> <span class="n">contains</span> <span class="n">entries</span> <span class="n">that</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">string</span><span class="err">→</span><span class="n">string</span><span class="p">,</span> <span class="n">ignore</span> <span class="n">those</span> <span class="n">invalid</span> <span class="n">entries</span> <span class="ow">and</span> <span class="k">continue</span> <span class="n">merging</span> <span class="n">valid</span> <span class="n">ones</span> <span class="p">(</span><span class="n">prefer</span> <span class="n">partial</span> <span class="n">success</span><span class="p">)</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">If</span> <span class="n">PATCH</span> <span class="ow">is</span> <span class="n">empty</span> <span class="ow">or</span> <span class="n">missing</span><span class="p">,</span> <span class="k">return</span> <span class="n">ORIGINAL</span> <span class="p">(</span><span class="n">normalized</span><span class="p">)</span> <span class="k">as</span><span class="o">-</span><span class="ow">is</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">If</span> <span class="n">ORIGINAL</span> <span class="ow">is</span> <span class="n">empty</span> <span class="ow">or</span> <span class="n">missing</span><span class="p">,</span> <span class="k">return</span> <span class="n">PATCH</span> <span class="p">(</span><span class="n">normalized</span><span class="p">)</span> <span class="k">as</span><span class="o">-</span><span class="ow">is</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">No</span> <span class="n">network</span> <span class="n">calls</span> <span class="ow">or</span> <span class="n">web</span> <span class="n">requests</span><span class="o">.</span>
+
+<span class="n">FINAL</span> <span class="n">OUTPUT</span>
+<span class="o">-</span> <span class="n">Output</span> <span class="n">the</span> <span class="n">merged</span> <span class="n">result</span> <span class="k">as</span> <span class="n">a</span> <span class="n">single</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">JSON</span> <span class="nb">object</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;&lt;lang&gt;&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;&lt;source&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;target&gt;&quot;</span><span class="p">,</span>
+      <span class="o">...</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+  <span class="p">}</span>
+<span class="o">-</span> <span class="n">Output</span> <span class="n">ONLY</span> <span class="n">that</span> <span class="n">JSON</span> <span class="n">document</span> <span class="p">(</span><span class="n">pretty</span><span class="o">-</span><span class="n">printed</span><span class="p">,</span> <span class="n">Unicode</span> <span class="n">unescaped</span><span class="p">),</span> <span class="ow">and</span> <span class="n">nothing</span> <span class="k">else</span><span class="o">.</span>
+
+<span class="n">STRICT</span> <span class="n">CONSTRAINT</span>
+<span class="o">-</span> <span class="n">Do</span> <span class="ow">not</span> <span class="n">output</span> <span class="nb">any</span> <span class="n">explanatory</span> <span class="n">text</span><span class="p">,</span> <span class="n">logs</span><span class="p">,</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">review</span> <span class="nb">list</span><span class="o">.</span> <span class="n">The</span> <span class="n">output</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">single</span> <span class="n">valid</span> <span class="n">JSON</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">required</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">schema</span> <span class="n">suitable</span> <span class="k">for</span> <span class="n">direct</span> <span class="n">upload</span> <span class="n">using</span> <span class="n">the</span> <span class="n">SRT</span> <span class="n">GUI</span> <span class="n">Import</span> <span class="n">Termbase</span> <span class="n">button</span><span class="o">.</span>
+
+<span class="o">---</span> <span class="n">END</span> <span class="n">OF</span> <span class="n">PROMPT</span> <span class="o">---</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/working-backwards/srt_translator" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

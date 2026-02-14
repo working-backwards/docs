@@ -1,0 +1,2818 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Free MIT-licensed SRT translation tool for creators and developers">
+      
+      
+      
+        <link rel="canonical" href="https://docs.workingbackwards.com/srt-translator/user-guide/gui-manual/">
+      
+      
+        <link rel="prev" href="../quickstart/">
+      
+      
+        <link rel="next" href="../creator-guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>GUI Manual - SRT Translator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#srt-translator-gui-user-manual" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://docs.workingbackwards.com/" title="SRT Translator" class="md-header__button md-logo" aria-label="SRT Translator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SRT Translator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GUI Manual
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/working-backwards/srt_translator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../developer/" class="md-tabs__link">
+          
+  
+  
+  Developer Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docs.workingbackwards.com/" title="SRT Translator" class="md-nav__button md-logo" aria-label="SRT Translator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SRT Translator
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/working-backwards/srt_translator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GUI Manual
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GUI Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-original-language-srt-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Original Language SRT Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-target-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Target Languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-api-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. API Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. API Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-key-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-translation-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Translation Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Translation Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tone
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-files-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Files &amp; Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Translation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepbystep-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step‑by‑Step Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-translation-advanced-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding Translation (Advanced Concepts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Translation (Advanced Concepts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translation-101-for-content-creators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Translation 101 (for Content Creators)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Translation 101 (for Content Creators)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-translate-dnt-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do-Not-Translate (DNT) Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-termbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Termbase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-subtitle-translation-is-different-from-document-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Subtitle Translation is Different from Document Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-srt-translator-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How SRT Translator Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitle-processing-context-vs-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitle Processing: Context vs. Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-great-results-dnt-termbase-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Great Results: DNT &amp; Termbase Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-translation-review-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Translation Review Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ (Short)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-long-will-it-take-to-translate-my-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How long will it take to translate my content?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How long will it take to translate my content?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rule-of-thumb-based-on-real-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule of thumb (based on real runs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-a-single-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For a single language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-multiple-languages-current-app-serial-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For multiple languages (current app = serial processing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-world example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-do-not-see-any-translations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I do not see any translations.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-timing-looks-unusual-in-a-few-places" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The timing looks unusual in a few places.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-terms-should-have-stayed-in-english" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Some terms should have stayed in English.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-business-term-needs-a-specific-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A business term needs a specific translation.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-get-an-error-about-batch-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I get an error about "batch in progress."
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-do-when-translations-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to do when translations fail.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequently Asked Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequently Asked Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-do-my-new-files-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where do my new files go?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-the-application-edit-my-original-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Does the application edit my original files?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-close-the-application-during-a-long-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I close the application during a long translation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-language-names-or-language-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I use language names or language codes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-file-formats-are-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What file formats are supported?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-find-log-files-for-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where can I find log files for troubleshooting?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-and-optimization-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance and Optimization Tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance and Optimization Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translation-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Translation Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-vs-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality vs. Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-and-resource-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory and Resource Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modern-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modern Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modern Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-output-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhanced Output Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improved Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Optimizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-and-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices and Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices and Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before You Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#during-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        During Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creator-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Creators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customizing-termbase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Termbases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/translation-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translation Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/technical-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/post-translation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-Translation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/coding-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/ci-guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI Guardrails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/github-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-original-language-srt-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Original Language SRT Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-target-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Target Languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-api-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. API Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. API Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-key-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-translation-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Translation Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Translation Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tone
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-files-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Files &amp; Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Translation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepbystep-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step‑by‑Step Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-translation-advanced-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding Translation (Advanced Concepts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Translation (Advanced Concepts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translation-101-for-content-creators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Translation 101 (for Content Creators)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Translation 101 (for Content Creators)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-translate-dnt-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do-Not-Translate (DNT) Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-termbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Termbase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-subtitle-translation-is-different-from-document-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Subtitle Translation is Different from Document Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-srt-translator-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How SRT Translator Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitle-processing-context-vs-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitle Processing: Context vs. Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-great-results-dnt-termbase-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Great Results: DNT &amp; Termbase Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-translation-review-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Translation Review Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ (Short)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-long-will-it-take-to-translate-my-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How long will it take to translate my content?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How long will it take to translate my content?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rule-of-thumb-based-on-real-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule of thumb (based on real runs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-a-single-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For a single language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-multiple-languages-current-app-serial-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For multiple languages (current app = serial processing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-world example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-do-not-see-any-translations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I do not see any translations.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-timing-looks-unusual-in-a-few-places" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The timing looks unusual in a few places.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-terms-should-have-stayed-in-english" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Some terms should have stayed in English.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-business-term-needs-a-specific-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A business term needs a specific translation.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-get-an-error-about-batch-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I get an error about "batch in progress."
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-do-when-translations-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to do when translations fail.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequently Asked Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequently Asked Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-do-my-new-files-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where do my new files go?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-the-application-edit-my-original-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Does the application edit my original files?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-close-the-application-during-a-long-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I close the application during a long translation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-language-names-or-language-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I use language names or language codes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-file-formats-are-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What file formats are supported?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-find-log-files-for-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where can I find log files for troubleshooting?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-and-optimization-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance and Optimization Tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance and Optimization Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translation-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Translation Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-vs-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality vs. Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-and-resource-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory and Resource Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modern-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modern Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modern Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-output-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhanced Output Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improved Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Optimizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-and-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices and Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices and Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before You Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#during-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        During Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="srt-translator-gui-user-manual">SRT Translator — GUI User Manual<a class="headerlink" href="#srt-translator-gui-user-manual" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Thank you for using the SRT Translator. This guide explains how the application works, and it walks you through a typical translation from start to finish. You do not need to write any code. You only need your original language subtitle files and your OpenAI API key.</p>
+<p>An <strong>SRT file</strong> is a subtitle file format. It contains:
+- A numbered list of captions
+- Start and end times for each caption
+- The text of the caption</p>
+<p>The SRT Translator helps you create <strong>high-quality translated subtitles</strong> from your original SRT files.</p>
+<p>The SRT Translator reads your original SRT subtitle files, translates them into one or more target languages, and writes clean, well‑timed SRT files to an output folder. It keeps your important terms intact when you tell it which words or phrases should never be translated. It can also apply a custom termbase so your business terms remain consistent.</p>
+<p>The SRT Translator can help you if you are:
+- A <strong>content creator</strong> who wants to reach a broader audience with multilingual subtitles.
+- Someone who wants <strong>control over your subtitles</strong> (e.g., YouTube auto-generates subtitles but doesn’t let you edit them easily).
+- A person or team who needs <strong>Do Not Translate (DNT) lists</strong> or <strong>Termbases</strong> to ensure brand names, technical terms, or special vocabulary are handled correctly.</p>
+<p>With this tool, you stay in control of your content and ensure your subtitles are accurate and consistent.</p>
+<hr />
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<p>When you open the application, the main window guides you through these steps (in order):</p>
+<ol>
+<li><strong>Original Language SRT Files</strong></li>
+<li><strong>Target Languages</strong></li>
+<li><strong>API Configuration</strong></li>
+<li><strong>Translation Settings</strong></li>
+<li><strong>Files &amp; Output</strong></li>
+<li><strong>Translation</strong></li>
+</ol>
+<hr />
+<h2 id="1-original-language-srt-files">1. Original Language SRT Files<a class="headerlink" href="#1-original-language-srt-files" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Click <strong>Browse Files</strong> to select your <code>.srt</code> files directly.</li>
+<li>You can select multiple files at once using your system's file dialog.</li>
+<li>After adding files, you can:</li>
+<li>Click individual files to select/deselect them</li>
+<li>Click <strong>Select All</strong> to select all loaded files</li>
+<li>Click <strong>Clear All</strong> to remove all files</li>
+</ul>
+<p>This ensures you're working with the right source files before translation.</p>
+<hr />
+<h2 id="2-target-languages">2. Target Languages<a class="headerlink" href="#2-target-languages" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Choose the <strong>languages you want to translate into</strong>.</li>
+<li>You can pick one or many.</li>
+<li>The app shows language <strong>names</strong> (e.g., “Japanese”), not codes (like <code>ja</code>).</li>
+<li>Internally, the tool maps names to codes for you, so you don’t need to worry about technical details.</li>
+</ul>
+<hr />
+<h2 id="3-api-configuration">3. API Configuration<a class="headerlink" href="#3-api-configuration" title="Permanent link">&para;</a></h2>
+<p>This section is where you enter your <strong>OpenAI API key</strong>.</p>
+<ul>
+<li>An API key is like a password that lets the translator connect securely to OpenAI’s translation models.</li>
+<li>You can get an API key by creating an account at <a href="https://platform.openai.com/">platform.openai.com</a> and going to your <strong>API Keys</strong> page.</li>
+<li>Copy your key and paste it into the app.</li>
+<li>You can test your key and update it at any time.</li>
+</ul>
+<h3 id="api-key-security">API Key Security<a class="headerlink" href="#api-key-security" title="Permanent link">&para;</a></h3>
+<p>The SRT Translator takes your API key security seriously:</p>
+<ul>
+<li><strong>Secure Storage</strong>: Your API key is stored securely in your system's registry (Windows) or preferences (macOS/Linux) using Qt's built-in <a href="https://doc.qt.io/qt-6/qsettings.html">settings system</a></li>
+<li><strong>Masked Input</strong>: The key is hidden with dots as you type it</li>
+<li><strong>No Logging</strong>: Your API key is never written to log files or reports</li>
+<li><strong>HTTPS Only</strong>: The key is only transmitted over secure HTTPS connections to OpenAI</li>
+<li><strong>Easy Management</strong>: You can update or clear your API key at any time through the app settings</li>
+</ul>
+<p>Your API key stays on your computer and is only used to communicate with OpenAI's translation services.</p>
+<hr />
+<h2 id="4-translation-settings">4. Translation Settings<a class="headerlink" href="#4-translation-settings" title="Permanent link">&para;</a></h2>
+<p>Here you can control how the translator handles <strong>terminology</strong>:</p>
+<ul>
+<li>
+<p><strong>Do Not Translate (DNT)</strong> - These are words or phrases that should never be translated (e.g., brand names like “iPhone” or proper names, like the author of the video). DNT terms will remain exactly the same in each laguage translation. There can be up to one DNT list per translation batch.</p>
+</li>
+<li>
+<p><strong>Termbase</strong>  - Termbase is a glossary of approved translations for important terms in your video. They are used to ensure consistency (e.g., “cloud computing” → always translated the same way) across translations. Termbases are useful your content has specialized vocabulary (like medicine, law, or company-specific terms). Each target language can have up to one termbase.</p>
+</li>
+</ul>
+<p><strong>Good news:</strong>
+- You don’t need to create these yourself — the SRT app can provide sensible defaults that can you can view and edit. If you want to the SRT app to generate a DNT or Termbases for you, choose your original language SRT files, the target languages, then click on the "Regenerate" button. The SRT app will send the first 12,500 tokens (about 9,000 - 10,000 English words) to the AI translator. When finished, click on the "Edit Settings" button to view and/or change them.</p>
+<p>While DNT, Termbases, and Tone are optional, using them will typically yield a higher quality translation.</p>
+<h3 id="tone">Tone<a class="headerlink" href="#tone" title="Permanent link">&para;</a></h3>
+<p>Choose the translation register for your content:</p>
+<ul>
+<li><strong>Casual</strong>: Informal, conversational style suitable for vlogs, personal channels</li>
+<li><strong>Neutral (recommended)</strong>: Professional and approachable — recommended for business training</li>
+<li><strong>Formal</strong>: Polite, official style for corporate communications (may use honorifics in some languages like Japanese)</li>
+</ul>
+<p>The Tone setting affects how the translator approaches formality and politeness. Some languages (like Chinese, Japanese, German, French) have automatic language-specific hints applied based on tone selection. These hints are automatic and not user-configurable.</p>
+<hr />
+<h2 id="5-files-output">5. Files &amp; Output<a class="headerlink" href="#5-files-output" title="Permanent link">&para;</a></h2>
+<ul>
+<li>After selecting your input files and target languages, you choose an <strong>output folder</strong>.</li>
+<li>The translated <code>.srt</code> files will be written here.</li>
+<li>The workflow is:</li>
+<li>Pick an input folder.</li>
+<li>Select one or more <code>.srt</code> files.</li>
+<li>Choose an output folder.</li>
+<li>The app saves your translated subtitles into subfolders for each language.</li>
+</ul>
+<hr />
+<h2 id="6-translation">6. Translation<a class="headerlink" href="#6-translation" title="Permanent link">&para;</a></h2>
+<p>The final section is where you run the translations.</p>
+<p>Features include:
+- <strong>Estimated Cost</strong> — shows you an estimate of OpenAI usage cost before you begin.
+- <strong>Translate All Files</strong> button — runs translations for all selected files.
+- <strong>Progress Bar</strong> — shows progress while translations are running.
+- <strong>Logs Window</strong> — shows real-time progress messages.
+- <strong>Open HTML Report</strong> button — once translations finish, you can open a detailed evaluation report (helpful for quality checks).</p>
+<hr />
+<h2 id="stepbystep-guide">Step‑by‑Step Guide<a class="headerlink" href="#stepbystep-guide" title="Permanent link">&para;</a></h2>
+<p>These steps describe a typical translation workflow in complete sentences.</p>
+<ol>
+<li>Open the application. Select your original language SRT files.</li>
+<li>Select your Output Directory.</li>
+<li>Choose your target languages.</li>
+<li>Open the API Configuration box, enter your OpenAI API key, and click on the "Test Connection" button.</li>
+<li>(Optional) Open Translations Setting box, click on the "Regenerate" button to build your DNT and Termbases.</li>
+<li>(Optional) Click on the "Edit Settings" button, then review your DNT and Termbases. Edit, if necessary. Usually the default is fine.</li>
+<li>Click Translate All Files. Watch the progress bar and the live log. The application creates a separate translated SRT for each target language.</li>
+<li>The application automatically runs fixes after each SRT file is translated to all languages. You will see "Running automatic fixes for [filename]..." in the log.</li>
+<li>When the translation completes, click on the Open HTML Report" button to view and fix any translation issues. Remember SRT files are just text files, so you can make any minor changes with our favorite text editor.</li>
+<li>Go to your Output Directory. A new folder will be created for each translation batch. Upload your newly translated SRT files in your video hosting system!</li>
+</ol>
+<hr />
+<h2 id="understanding-translation-advanced-concepts">Understanding Translation (Advanced Concepts)<a class="headerlink" href="#understanding-translation-advanced-concepts" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>For users who want to understand how the translation process works and how to get the best results.</strong></p>
+</blockquote>
+<h3 id="translation-101-for-content-creators">Translation 101 (for Content Creators)<a class="headerlink" href="#translation-101-for-content-creators" title="Permanent link">&para;</a></h3>
+<h4 id="do-not-translate-dnt-terms">Do-Not-Translate (DNT) Terms<a class="headerlink" href="#do-not-translate-dnt-terms" title="Permanent link">&para;</a></h4>
+<p>A DNT list is a set of tokens we preserve exactly across languages—brand names, product names, file paths, hashtags, model numbers, proper nouns, commands, code, etc.</p>
+<p><strong>Why it matters:</strong> Translation systems may "help" by changing names or formatting in ways that hurt comprehension, branding, or technical accuracy.</p>
+<p><strong>Examples:</strong>
+- <strong>Brand/product names:</strong> SuperCut, ProMix 3000
+- <strong>Handles/hashtags:</strong> @CreatorName, #NoFilter
+- <strong>Technical strings:</strong> Ctrl+C, CUDA, render_settings.json
+- <strong>Part numbers / SKUs:</strong> XC-200, M2-MAX</p>
+<p>The SRT Translator passes your DNT list to the AI and also pre-protects it so it survives translation intact.</p>
+<h4 id="custom-termbase">Custom Termbase<a class="headerlink" href="#custom-termbase" title="Permanent link">&para;</a></h4>
+<p>A Termbase is your curated glossary mapping each source term to its preferred translations for each target language.</p>
+<p>Unlike the DNT list, the Termbase tells the translator how to translate important terms, ensuring consistency across all your videos.</p>
+<p><strong>Example Termbase:</strong></p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Spanish</th>
+<th>Chinese (Simplified)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lower third</td>
+<td>rótulo</td>
+<td>下三分之一</td>
+</tr>
+<tr>
+<td>b-roll</td>
+<td>recurso</td>
+<td>补充镜头</td>
+</tr>
+<tr>
+<td>cold open</td>
+<td>apertura fría</td>
+<td>冷开场</td>
+</tr>
+<tr>
+<td>operating cadence</td>
+<td>cadencia operativa</td>
+<td>运营节奏</td>
+</tr>
+<tr>
+<td>input metrics</td>
+<td>métricas de entrada</td>
+<td>输入指标</td>
+</tr>
+<tr>
+<td>jump cut</td>
+<td>corte brusco</td>
+<td>跳切</td>
+</tr>
+<tr>
+<td>call to action</td>
+<td>llamada a la acción</td>
+<td>行动号召</td>
+</tr>
+</tbody>
+</table>
+<p>The AI suggests a Termbase for each language based on your content. The lists do not need to be identical across languages — each is optimized for that language's context.</p>
+<h3 id="why-subtitle-translation-is-different-from-document-translation">Why Subtitle Translation is Different from Document Translation<a class="headerlink" href="#why-subtitle-translation-is-different-from-document-translation" title="Permanent link">&para;</a></h3>
+<p>Subtitles have timecodes, line-length constraints, and reading-speed limits. That creates unique challenges:</p>
+<ul>
+<li><strong>Lip-sync vs. readability:</strong> We preserve your original timing, but translated text may need more or fewer characters. We prioritize readability and matching the speaker's intent over perfect lip movement.</li>
+<li><strong>Segment structure changes:</strong> The app now uses subtitle-based processing that translates each subtitle individually while maintaining perfect timing alignment.</li>
+<li><strong>Punctuation and sentence boundaries:</strong> Languages break sentences differently; we normalize punctuation for readability.</li>
+</ul>
+<p><strong>In practice:</strong> The app makes a best effort to keep your subtitles aligned with speaker turns and major pauses, while allowing small changes so the translation reads naturally.</p>
+<h3 id="how-srt-translator-works">How SRT Translator Works<a class="headerlink" href="#how-srt-translator-works" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Ingest your SRT</strong> — already speaker-synced</li>
+<li><strong>Prepare terminology</strong> — AI suggests DNT and Termbase candidates; you review/edit</li>
+<li><strong>Subtitle-based processing</strong> — We now translate each subtitle individually while maintaining perfect timing alignment. This provides better context for accurate translation while maintaining exact timing.</li>
+<li><strong>GUI users:</strong> Subtitle processing is automatic and optimized</li>
+<li><strong>CLI (expert) users:</strong> Can configure error policies and concurrency settings</li>
+<li><strong>Translate with instructions</strong> — The AI receives your DNT list, Termbase, and subtitle-specific constraints</li>
+<li><strong>Reassemble &amp; retime</strong> — We map translated text back to subtitles, allowing minimal merge/split, then snap results to your original timecodes</li>
+<li><strong>Quality passes</strong> — After translation, we:</li>
+<li>Search for DNT terms and ensure they are present in the correct sentence order</li>
+<li>Replace incorrectly translated or misplaced DNT terms with the exact term from your list</li>
+<li>Flag cases for manual intervention where DNT placement can't be resolved automatically</li>
+<li>Perform other internal cleanup steps to preserve subtitle integrity</li>
+</ol>
+<h3 id="subtitle-processing-context-vs-timing">Subtitle Processing: Context vs. Timing<a class="headerlink" href="#subtitle-processing-context-vs-timing" title="Permanent link">&para;</a></h3>
+<p><strong>The Challenge:</strong> Subtitle translation requires balancing two competing needs:</p>
+<p>Subtitle-based processing balances context for better translation against perfect timing preservation.</p>
+<p><strong>How it works:</strong> We translate each subtitle individually while maintaining exact timing. Each subtitle keeps its original start and end time, ensuring perfect synchronization with your video.</p>
+<p><strong>Benefits:</strong> Better translation quality through sentence-level context, while maintaining perfect timing alignment with the new subtitle-based approach.</p>
+<p><strong>GUI users don't need to worry about this</strong> — it's automatic and optimized. Advanced CLI users can configure error policies and concurrency settings.</p>
+<h3 id="getting-great-results-dnt-termbase-setup">Getting Great Results: DNT &amp; Termbase Setup<a class="headerlink" href="#getting-great-results-dnt-termbase-setup" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Start with AI suggestions</strong> — Accept obvious DNT terms and promote important repeated terms to the Termbase</li>
+<li><strong>Add variants</strong> — Include common capitalization or plural forms in DNT if they must be preserved exactly</li>
+<li><strong>Lock critical tokens</strong> — File paths, JSON keys, function names should be in DNT</li>
+<li><strong>Keep it lean</strong> — Too many DNTs can over-constrain; focus on must-preserve items</li>
+</ul>
+<h3 id="post-translation-review-checklist">Post-Translation Review Checklist<a class="headerlink" href="#post-translation-review-checklist" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>DNT integrity:</strong> All DNT terms are preserved exactly and in the right place</li>
+<li><strong>Termbase consistency:</strong> Terms match approved translations for each language</li>
+<li><strong>Readability:</strong> Lines are concise and easy to read at intended display speed</li>
+<li><strong>Timing:</strong> No overlaps, speaker changes align with subtitle changes</li>
+<li><strong>Locale formatting:</strong> Numbers, dates, and other formats match target language norms</li>
+<li><strong>Tone/register:</strong> Consistent with your audience</li>
+</ul>
+<h3 id="faq-short">FAQ (Short)<a class="headerlink" href="#faq-short" title="Permanent link">&para;</a></h3>
+<p><strong>Will the translated text match lip movement exactly?</strong></p>
+<p>No. We optimize for readability and timing with speaker intent, not exact lip flaps.</p>
+<p><strong>Why did the number of subtitles change after translation?</strong></p>
+<p>Some languages express ideas in more or fewer words. We allow small changes and then re-fit to your original timeline so the viewing rhythm stays intact.</p>
+<p><strong>Do I need a Termbase if I already have DNT?</strong></p>
+<p>Yes. DNT preserves exact tokens; the Termbase defines how domain terms should be translated.</p>
+<h2 id="how-long-will-it-take-to-translate-my-content">How long will it take to translate my content?<a class="headerlink" href="#how-long-will-it-take-to-translate-my-content" title="Permanent link">&para;</a></h2>
+<p>Translation time depends on your content length, complexity and the number of target languages. It’s typically <strong>faster than real-time</strong>.</p>
+<h3 id="rule-of-thumb-based-on-real-runs">Rule of thumb (based on real runs)<a class="headerlink" href="#rule-of-thumb-based-on-real-runs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Speed:</strong> \~<strong>42–54 seconds per 100 subtitles per language</strong></li>
+<li><strong>What 100 subtitles represents:</strong> roughly <strong>3–5 minutes of video</strong></li>
+<li><strong>Per-file overhead:</strong> add <strong>\~15–30 seconds</strong> for each additional file in a job</li>
+<li><strong>Languages are processed serially (one after another) in the current version.</strong></li>
+</ul>
+<hr />
+<h3 id="for-a-single-language">For a single language<a class="headerlink" href="#for-a-single-language" title="Permanent link">&para;</a></h3>
+<p><em>(Assumes one file; add \~15–30 sec per extra file.)</em></p>
+<ul>
+<li><strong>5 minutes of content:</strong> <strong>\~1.1–1.6 min</strong></li>
+<li><strong>15 minutes of content:</strong> <strong>\~2.9–3.9 min</strong></li>
+<li><strong>30 minutes of content:</strong> <strong>\~5.5–7.2 min</strong></li>
+<li><strong>60 minutes of content:</strong> <strong>\~10.8–14.0 min</strong></li>
+</ul>
+<hr />
+<h3 id="for-multiple-languages-current-app-serial-processing">For multiple languages <em>(current app = serial processing)</em><a class="headerlink" href="#for-multiple-languages-current-app-serial-processing" title="Permanent link">&para;</a></h3>
+<p>Multiply the single-language time by the number of languages:</p>
+<table>
+<thead>
+<tr>
+<th>Content Length</th>
+<th style="text-align: right;">3 Languages</th>
+<th style="text-align: right;">5 Languages</th>
+<th style="text-align: right;">10 Languages</th>
+<th style="text-align: right;">12 Languages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>5 minutes</strong></td>
+<td style="text-align: right;">3.4–4.9 min</td>
+<td style="text-align: right;">5.6–8.1 min</td>
+<td style="text-align: right;">11.2–16.2 min</td>
+<td style="text-align: right;">13.5–19.5 min</td>
+</tr>
+<tr>
+<td><strong>15 minutes</strong></td>
+<td style="text-align: right;">8.6–11.6 min</td>
+<td style="text-align: right;">14.4–19.4 min</td>
+<td style="text-align: right;">28.8–38.8 min</td>
+<td style="text-align: right;">34.5–46.5 min</td>
+</tr>
+<tr>
+<td><strong>30 minutes</strong></td>
+<td style="text-align: right;">16.5–21.8 min</td>
+<td style="text-align: right;">27.5–36.2 min</td>
+<td style="text-align: right;">55.0–72.5 min</td>
+<td style="text-align: right;">66.0–87.0 min</td>
+</tr>
+<tr>
+<td><strong>60 minutes</strong></td>
+<td style="text-align: right;">32.2–42.0 min</td>
+<td style="text-align: right;">53.8–70.0 min</td>
+<td style="text-align: right;">1.8–2.3 hr</td>
+<td style="text-align: right;">2.1–2.8 hr</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="real-world-example">Real-world example<a class="headerlink" href="#real-world-example" title="Permanent link">&para;</a></h3>
+<p>A recent translation of 9 modules (ranging from 1–27 minutes each) into <strong>12 languages</strong> took <strong>\~5 hours 18 minutes</strong> end-to-end. The system processed 108 translation operations successfully with zero errors.</p>
+<blockquote>
+<p><strong>Performance tip:</strong> Speed is broadly consistent across languages (Spanish, Chinese, Arabic, Japanese, etc.), so you can plan confidently regardless of target languages.</p>
+</blockquote>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="i-do-not-see-any-translations">I do not see any translations.<a class="headerlink" href="#i-do-not-see-any-translations" title="Permanent link">&para;</a></h3>
+<p>Please confirm your API key in the API Configuration section. Make sure your internet connection is stable. Check the log for any error messages. If the log reports an authentication error, you may need to create a new key.</p>
+<h3 id="the-timing-looks-unusual-in-a-few-places">The timing looks unusual in a few places.<a class="headerlink" href="#the-timing-looks-unusual-in-a-few-places" title="Permanent link">&para;</a></h3>
+<p>The application now uses subtitle-based processing that preserves exact timing. Each subtitle maintains its original start and end time, while the translated text is intelligently formatted within the original timing window. This approach eliminates timing drift completely while keeping subtitles readable and properly synchronized.</p>
+<h3 id="some-terms-should-have-stayed-in-english">Some terms should have stayed in English.<a class="headerlink" href="#some-terms-should-have-stayed-in-english" title="Permanent link">&para;</a></h3>
+<p>Add those exact phrases to the DNT Terms list and run the translation again. The translator will keep those phrases as written.</p>
+<h3 id="a-business-term-needs-a-specific-translation">A business term needs a specific translation.<a class="headerlink" href="#a-business-term-needs-a-specific-translation" title="Permanent link">&para;</a></h3>
+<p>Add the term and its preferred translation to your termbase for that language. Then translate again. The translator will apply your preference whenever it finds the term.</p>
+<h3 id="i-get-an-error-about-batch-in-progress">I get an error about "batch in progress."<a class="headerlink" href="#i-get-an-error-about-batch-in-progress" title="Permanent link">&para;</a></h3>
+<p>The application processes one translation at a time to ensure quality and prevent conflicts. If you see this error, wait for the current translation to complete before starting another. This design prevents API rate limit issues and ensures consistent performance.</p>
+<h3 id="what-to-do-when-translations-fail">What to do when translations fail.<a class="headerlink" href="#what-to-do-when-translations-fail" title="Permanent link">&para;</a></h3>
+<p>If a translation fails completely, the application will attempt to fall back to individual subtitle translation. Check the log files for detailed information about what went wrong. Common issues include:
+- API authentication problems (check your API key)
+- Network connectivity issues
+- Content that the AI model cannot process
+- File format problems</p>
+<p>The log files will show exactly what happened and where the process failed.</p>
+<hr />
+<h2 id="frequently-asked-questions">Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h2>
+<h3 id="where-do-my-new-files-go">Where do my new files go?<a class="headerlink" href="#where-do-my-new-files-go" title="Permanent link">&para;</a></h3>
+<p>Your translated files appear in the output directory that you selected in the Files &amp; Output section. Each language receives its own SRT file.</p>
+<h3 id="does-the-application-edit-my-original-files">Does the application edit my original files?<a class="headerlink" href="#does-the-application-edit-my-original-files" title="Permanent link">&para;</a></h3>
+<p>No. The application treats your original files as read‑only. It never deletes them and it never modifies them. It only reads them.</p>
+<h3 id="can-i-close-the-application-during-a-long-translation">Can I close the application during a long translation?<a class="headerlink" href="#can-i-close-the-application-during-a-long-translation" title="Permanent link">&para;</a></h3>
+<p>You can close the application at any time. When you reopen it, your settings remain. You can start a new translation when you are ready.</p>
+<h3 id="can-i-use-language-names-or-language-codes">Can I use language names or language codes?<a class="headerlink" href="#can-i-use-language-names-or-language-codes" title="Permanent link">&para;</a></h3>
+<p>Yes. You can use either. The application maps names to ISO codes for you. It shows your selections clearly in the interface.</p>
+<h3 id="what-file-formats-are-supported">What file formats are supported?<a class="headerlink" href="#what-file-formats-are-supported" title="Permanent link">&para;</a></h3>
+<p>The application currently supports standard SRT subtitle files. Make sure your input files have the <code>.srt</code> extension and follow the standard SRT format:
+- Subtitle number
+- Timestamp (HH:MM:SS,mmm → HH:MM:SS,mmm)
+- Subtitle text
+- Blank line between subtitles</p>
+<p>The application will validate your files and show any format issues in the log.</p>
+<h3 id="where-can-i-find-log-files-for-troubleshooting">Where can I find log files for troubleshooting?<a class="headerlink" href="#where-can-i-find-log-files-for-troubleshooting" title="Permanent link">&para;</a></h3>
+<p>The application creates detailed log files in your output directory that you can check if something goes wrong. These log files are automatically generated alongside your translated SRT files and contain detailed information about what happened during translation, including any errors or issues that the automatic fixer addressed.</p>
+<p>The output directory contains:
+- <strong>Translated SRT files</strong> - Your main results
+- <strong>Manifest file</strong> - A summary of all translations performed
+- <strong>DNT terms file</strong> - Your "Do Not Translate" terms for reference
+- <strong>Termbase file</strong> - Your custom terminology for reference
+- <strong>Log files</strong> - Detailed translation logs with timestamps</p>
+<hr />
+<h2 id="performance-and-optimization-tips">Performance and Optimization Tips<a class="headerlink" href="#performance-and-optimization-tips" title="Permanent link">&para;</a></h2>
+<h3 id="translation-speed">Translation Speed<a class="headerlink" href="#translation-speed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Process fewer target languages at once for faster results</li>
+<li>Smaller SRT files translate more quickly than very long ones</li>
+<li>The application automatically optimizes subtitle processing for your content</li>
+</ul>
+<h3 id="quality-vs-speed">Quality vs. Speed<a class="headerlink" href="#quality-vs-speed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The default model provides a good balance of quality and speed</li>
+<li>For critical content, the system maintains quality while preserving exact timing</li>
+<li>Use the preview feature to test your settings before processing large files</li>
+</ul>
+<h3 id="memory-and-resource-usage">Memory and Resource Usage<a class="headerlink" href="#memory-and-resource-usage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The application is designed to handle large subtitle files efficiently</li>
+<li>Processing one file at a time ensures consistent performance</li>
+<li>Log files are automatically managed to prevent disk space issues</li>
+</ul>
+<h2 id="modern-features">Modern Features<a class="headerlink" href="#modern-features" title="Permanent link">&para;</a></h2>
+<h3 id="enhanced-output-organization">Enhanced Output Organization<a class="headerlink" href="#enhanced-output-organization" title="Permanent link">&para;</a></h3>
+<p>The application now organizes all output files in one convenient location:
+- <strong>Translated SRT files</strong> are clearly named with language indicators
+- <strong>Manifest file</strong> provides a complete record of all translations
+- <strong>Configuration files</strong> (DNT terms, termbase) are saved for future reference
+- <strong>Log files</strong> contain detailed information for troubleshooting</p>
+<h3 id="improved-error-handling">Improved Error Handling<a class="headerlink" href="#improved-error-handling" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Clear error messages when translations cannot proceed</li>
+<li>Automatic fallback to individual subtitle translation if batch translation fails</li>
+<li>Detailed logging of all operations and decisions</li>
+<li>Phantom placeholder detection to prevent AI hallucinations</li>
+</ul>
+<h3 id="performance-optimizations">Performance Optimizations<a class="headerlink" href="#performance-optimizations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Single-file processing ensures consistent performance</li>
+<li>Rate limiting to respect API constraints</li>
+<li>Efficient subtitle processing with individual subtitle translation</li>
+<li>Memory-conscious file handling for large subtitle files</li>
+</ul>
+<hr />
+<h2 id="best-practices-and-workflow">Best Practices and Workflow<a class="headerlink" href="#best-practices-and-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="before-you-start">Before You Start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Test your API key to ensure it's working</li>
+<li>Review your DNT terms and termbase for accuracy</li>
+<li>Use the preview feature to verify your settings</li>
+<li>Choose an output directory that's easy to find</li>
+</ul>
+<h3 id="during-translation">During Translation<a class="headerlink" href="#during-translation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Monitor the progress bar and log for any issues</li>
+<li>Don't start multiple translations simultaneously</li>
+<li>Keep the application running until completion</li>
+<li>Check the log if you encounter any errors</li>
+</ul>
+<h3 id="after-translation">After Translation<a class="headerlink" href="#after-translation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Review the manifest file to confirm all files were processed</li>
+<li>Check a few translated files in your media player</li>
+<li>Save your DNT terms and termbase for future use</li>
+<li>Keep the log files for troubleshooting if needed</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/working-backwards/srt_translator" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
