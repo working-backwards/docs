@@ -2,74 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/API_DOCUMENTATION/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.workingbackwards.com/wbr-app/CHANGELOG/</loc>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/MIGRATION_GUIDE/</loc>
-         <lastmod>2026-02-14</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.workingbackwards.com/wbr-app/changelog/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/getting-started/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/migration-guide/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/guides/admin-ui/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/guides/multiple-files/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/guides/publishing/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/reference/api/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/reference/connections/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/reference/y-scaling/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/yaml/annotations/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/yaml/data-sources/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/yaml/deck/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/yaml/metrics/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/yaml/overview/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
     <url>
          <loc>https://docs.workingbackwards.com/wbr-app/yaml/setup/</loc>
-         <lastmod>2026-02-14</lastmod>
+         <lastmod>2026-02-19</lastmod>
     </url>
 </urlset>

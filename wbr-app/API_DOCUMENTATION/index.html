@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../images/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -854,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
+      <a href="../changelog.md" class="md-nav__link">
         
   
   
@@ -1033,6 +1033,45 @@
     <span class="md-ellipsis">
       
         Response Example (URL Output)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotations Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-list-format-csv-files-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple list format (CSV files only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dict-format-csv-files-andor-database-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dict format (CSV files and/or database sources)
       
     </span>
   </a>
@@ -1313,7 +1352,7 @@
 <span class="w">    </span><span class="nt">&quot;weekEnding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;25 September 2021&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;blockStartingNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;xAxisMonthlyDisplay&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;eventErrors&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="nt">&quot;annotationErrors&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
@@ -1334,6 +1373,27 @@
 <span class="w">  </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://&lt;domain&gt;/build-wbr/publish?file=&lt;uniqueFileName&gt;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="annotations-configuration">Annotations Configuration<a class="headerlink" href="#annotations-configuration" title="Permanent link">&para;</a></h2>
+<p>Annotations add contextual notes to specific metrics in the report. They can be configured in the WBR YAML config in two
+formats:</p>
+<h3 id="simple-list-format-csv-files-only">Simple list format (CSV files only)<a class="headerlink" href="#simple-list-format-csv-files-only" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/annotations.csv</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/annotations.csv</span>
+</code></pre></div>
+<h3 id="dict-format-csv-files-andor-database-sources">Dict format (CSV files and/or database sources)<a class="headerlink" href="#dict-format-csv-files-andor-database-sources" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">csv_files</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/annotations.csv</span>
+<span class="w">  </span><span class="nt">data_sources</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">MyProdPostgres</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">recent_annotations</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">query</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">          </span><span class="no">SELECT event_date as &quot;Date&quot;, metric_name as &quot;MetricName&quot;,</span>
+<span class="w">                 </span><span class="no">description as &quot;EventDescription&quot;</span>
+<span class="w">          </span><span class="no">FROM annotations ORDER BY event_date;</span>
+</code></pre></div>
+<p>Annotation queries must return exactly three columns aliased as <code>Date</code>, <code>MetricName</code>, and <code>EventDescription</code>.</p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Ensure that either csvUrl or csvfile is provided for the data source.</li>
