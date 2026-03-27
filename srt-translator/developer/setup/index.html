@@ -886,6 +886,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cli-model-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Model Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1212,6 +1223,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cli-model-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Model Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1378,6 +1400,27 @@
 └── config/         # Configuration files
 </code></pre></div>
 
+<h2 id="cli-model-configuration">CLI Model Configuration<a class="headerlink" href="#cli-model-configuration" title="Permanent link">&para;</a></h2>
+<p>For CLI runs (<code>srtx-cli</code>):</p>
+<ul>
+<li><strong>API key</strong> comes from <code>OPENAI_API_KEY</code> (OS environment wins over <code>.env</code>).</li>
+<li><strong>Translation model</strong> is controlled by the <code>.env</code> key:</li>
+</ul>
+<p><code>bash
+  OPENAI_TRANSLATION_MODEL=gpt-4o-mini</code></p>
+<p>If unset, the CLI uses <code>DEFAULT_TRANSLATION_MODEL</code> from <code>srt_translator/core/constants.py</code>.</p>
+<ul>
+<li>
+<p>The <strong>generation/configuration model</strong> (used for DNT + termbase generation) is a
+  code-level choice driven by:</p>
+</li>
+<li>
+<p><code>DEFAULT_GENERATION_MODEL</code> in <code>srt_translator/core/constants.py</code></p>
+</li>
+<li>Per-model capabilities in <code>srt_translator/config/model_config.json</code></li>
+</ul>
+<p>CLI code does not override or reference a separate configuration model; that remains
+  the responsibility of the AI-config pipeline (currently GUI-only).</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p><strong>"Module not found" errors</strong>
 - Ensure you ran <code>pip install -e .</code>
