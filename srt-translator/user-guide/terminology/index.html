@@ -1923,8 +1923,8 @@
 <li><strong>Latin Languages</strong>: No script restrictions (default behavior)</li>
 </ul>
 <h3 id="4-precedence-application">4. <strong>Precedence Application</strong><a class="headerlink" href="#4-precedence-application" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">Input</span><span class="o">:</span><span class="w"> </span><span class="n">DNT</span><span class="o">=[</span><span class="s2">&quot;machine learning&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;API&quot;</span><span class="o">],</span><span class="w"> </span><span class="n">Termbase</span><span class="o">={</span><span class="s2">&quot;machine learning&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;机器学习&quot;</span><span class="o">}</span>
-<span class="n">Result</span><span class="o">:</span><span class="w"> </span><span class="n">Effective</span><span class="w"> </span><span class="n">DNT</span><span class="o">=[</span><span class="s2">&quot;API&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="n">machine</span><span class="w"> </span><span class="n">learning</span><span class="w"> </span><span class="n">overridden</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">termbase</span><span class="o">)</span>
+<div class="codehilite"><pre><span></span><code>Input: DNT=[&quot;machine learning&quot;, &quot;API&quot;], Termbase={&quot;machine learning&quot;: &quot;机器学习&quot;}
+Result: Effective DNT=[&quot;API&quot;] (machine learning overridden by termbase)
 </code></pre></div>
 
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>

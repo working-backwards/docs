@@ -1628,7 +1628,7 @@
 <h3 id="configuration-isolation">Configuration Isolation<a class="headerlink" href="#configuration-isolation" title="Permanent link">&para;</a></h3>
 <ul>
 <li>CLI reads API key from environment or .env file</li>
-<li>GUI stores API key using OS-native secure storage (QSettings)</li>
+<li>GUI stores API key in local app settings via QSettings (<code>IniFormat</code>, plaintext); the SRT Translator does not use OS credential storage</li>
 <li>All translation configuration frozen in batch artifacts</li>
 <li>No external API calls during evaluation</li>
 </ul>
